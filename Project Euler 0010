@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var isPrime = false;
+        var sumOfPrimes = 0; // this is the sum of primes
+        var currentPrime = 0;
+        for (let i = 3; i < 2000001; i+2) {
+            isPrime = true;
+            for (j = 2; j < i; j++) {
+                if ((i % j) === 0) {
+                    isPrime = false;
+                }
+            }
+			//this is just me adding a line.  Here's alpha branch.
+            if (isPrime) {
+                sumOfPrimes +i;
+                alert(i + " is prime, just sayin' - and so my sum is now: " + sumOfPrimes);
+            }
+        }
+        alert("My final message is...   I have no ragrets!  Also, the sum of primes up to two million is " + sumOfPrimes);
+    </script>
+</body>
+</html>
