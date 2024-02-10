@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var largestPalindrome = 111111; //make the h8rs happy.
+        var tempNumber;
+        var tempNumberString;
+        var tempNumberStringBackwards;
+        for (numberOne = 999; numberOne > 100; numberOne--) {
+            for (numberTwo = 999; numberTwo > 100; numberTwo--) {
+                tempNumber = numberOne * numberTwo;
+                tempNumberString = tempNumber.toString();
+                tempNumberStringBackwards = ""; //make the h8rs happy.
+                for (i=1; i <= tempNumberString.length; i++){
+                    tempNumberStringBackwards = tempNumberStringBackwards + tempNumberString.charAt(tempNumberString.length - i);
+                }
+                if (tempNumberString == tempNumberStringBackwards) {
+                    if (tempNumber > largestPalindrome) {
+                        largestPalindrome = tempNumber;
+                    }
+                }
+            }
+        }
+        alert("All signs point to " + largestPalindrome + " being the largest palindromic number for this challenge.")
+    </script>
+</body>
+
+</html>

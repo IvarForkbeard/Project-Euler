@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let finalStatement = "The largest number of routes through a 20x20 grid moving only right or down is ";
+        let previousNumberOfPaths = 1;
+        let currentNumberOfPaths = 0;
+        for (let i = 2; i < 22; i ++){
+            currentNumberOfPaths = (previousNumberOfPaths * 3) + (previousNumberOfPaths * ((i - 3) / (i - 1)));
+            previousNumberOfPaths = currentNumberOfPaths;
+        }
+        answer = currentNumberOfPaths;
+        alert(finalStatement + answer);
+    </script>
+</body>
+
+</html>

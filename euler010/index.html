@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let isPrime = false;
+        let currentPrimes = [2,3];
+        let sumOfPrimes = 0;
+        let tester = 0;
+        for (let i = 5; i <= 2000000; i+=2) {
+            isPrime = true;
+            for (let j = 1; j < currentPrimes.length; j++) {
+                if ((i % currentPrimes[j]) === 0) {
+                    isPrime = false;
+                    break;
+                }
+                if (currentPrimes[j] > Math.sqrt(i)){
+                    break;
+                }
+            }
+            if (isPrime) {
+                currentPrimes.push(i);
+                sumOfPrimes += i;
+            }
+        }
+        alert("My final message is...   I have no ragrets!  Also, the sum of primes up to two million is " + sumOfPrimes);
+    </script>
+</body>
+
+</html>

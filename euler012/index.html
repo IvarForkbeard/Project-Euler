@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let finalStatement = "he first triangle number to have over five hundred divisors"; // make future answers easier to render
+        let answer = 0; // initialise value
+        let currentTriangleNumber = 0; // initialise value
+        let divisors = []; // initialise value
+        let squareRoot = 0; // initialise value
+        for (let i = 1; divisors.length <= 500; i++){
+            currentTriangleNumber += i; // this is what creates a triangle number.
+            divisors = [1, currentTriangleNumber]; // resetting the number of divisors for each triangle number tested.
+            squareRoot = Math.sqrt(currentTriangleNumber); // massive optimisation here.
+            for (let j = 2; j < squareRoot; j++){
+                if (currentTriangleNumber % j === 0){
+                    divisors.push(j); // add even divisors to the array of divisors already discovered.
+                    divisors.push(currentTriangleNumber / j); // and add their complement while we already have it.
+                }
+            }
+        }
+        answer = currentTriangleNumber;
+        alert("T" + finalStatement + " is " + answer);
+    </script>
+</body>
+
+</html>

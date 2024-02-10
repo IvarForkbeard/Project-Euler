@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var smallestPositiveNumber = 21; //make the h8rs happy.
+        var thereIsStillWorkToBeDone = true; //this is my version of a boobean.
+        while (thereIsStillWorkToBeDone) {
+            smallestPositiveNumber++;
+            thereIsStillWorkToBeDone = false;
+            for (var i=1; i < 21; i++) {
+                thereIsStillWorkToBeDone += (smallestPositiveNumber % i);
+            }
+        }
+        alert("My answer is: " + smallestPositiveNumber);
+    </script>
+</body>
+
+</html>

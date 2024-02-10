@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let finalStatement = "The sum of the digits of the number 2^1000 is ";
+        let numberArray = new Array(1000);
+        let answer = 0;
+        numberArray.fill(0);
+        numberArray[0] = 1;
+        for (i = 0; i < 1000; i ++) {
+            for (j = 0; j < 1000; j ++) {
+                numberArray[j] = numberArray[j] * 2;
+            }
+            for (j=0; j < 1000; j ++) {
+                if (numberArray[j] > 9) {
+                    numberArray[j + 1] = (numberArray[j + 1] + 1);
+                }
+                numberArray[j] = numberArray[j] % 10;
+           }
+        }
+        for (i = 0; i < 1000; i ++){
+            answer = answer + numberArray[i];
+        }
+        alert(finalStatement + answer);
+    </script>
+</body>
+
+</html>

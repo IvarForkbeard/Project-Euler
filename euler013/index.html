@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let finalStatement = "he first ten digits of the sum of the following one-hundred 50-digit numbers";
+        let fireHose = "37107287533902102798797998220837590246510135740250, 46376937677490009712648124896970078050417018260538";
+        let numberArray = fireHose.split(", ");
+        let carryNumber = 0;
+        let currentLine = "";
+        let currentNumber = 0;
+        let sumsArray = new Array(50);
+        let bigNumber = "";
+        sumsArray.fill(0);
+        for (let column = 0; column < 50; column++) {
+            for (let row = 0; row < 100; row++) {
+                currentLine = numberArray[row];
+                currentNumber = currentLine.charAt(column);
+                sumsArray[column] += Number(currentNumber);
+            }
+        }
+        for (let column = 49; column > 0; column--){
+            sumsArray[column - 1] += Math.floor(sumsArray[column] / 10);
+            sumsArray[column] = sumsArray[column] % 10;
+        }
+        for (let i = 0; i < 10; i++){
+            bigNumber += sumsArray[i];
+        }
+        answer = bigNumber.substr(0,10);
+        alert("T" + finalStatement + " is " + answer);
+    </script>
+</body>
+
+</html>

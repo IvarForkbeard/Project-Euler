@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let primeIndex = 2; //going to skip the first two primes
+        let index = 4; //cheating by starting off past the first consecutive primes
+        let isPrime = true;
+        while (primeIndex < 10001) {
+            isPrime = true;
+            for (let i = 2; i < index; i++){
+                if ((index % i) === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                primeIndex++;
+            }
+//           alert("index "+index+ "prime index "+primeIndex+ "isPrime: "+ isPrime);
+            index++;
+        }
+        alert("The " + primeIndex + "st/nd/rd/th prime number is: " + (index - 1));
+    </script>
+</body>
+
+</html>
