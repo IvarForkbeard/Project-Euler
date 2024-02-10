@@ -1,3 +1,4 @@
+// comments
 var bigNumber = 600851475143;
 var i = 4;
 var isPrime = 1;
